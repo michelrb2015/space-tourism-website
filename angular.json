@@ -19,6 +19,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+          "outputPath": "docs",
           "options": {
             "outputPath": "dist/space-tourism-website",
             "index": "src/index.html",
