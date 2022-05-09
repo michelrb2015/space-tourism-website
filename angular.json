@@ -21,8 +21,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "docs",
-            "baseHref": "https://michelrb2015.github.io/space-tourism-website/",
-            "deployUrl": "https://michelrb2015.github.io/space-tourism-website/",
+            "baseHref": "space-tourism-website",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
