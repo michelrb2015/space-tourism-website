@@ -3,17 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .bg-home {
-  background: image('home/background-home-mobile.jpg');
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
+  @extend .bg-default;
 }
 .home-content {
   display: flex;
@@ -34,17 +24,3 @@
   }
 }
 
-@media (min-width: map-get($breakpoints, "small")) {
-  .bg-home {
-    background-image: image('home/background-home-tablet.jpg');
-    background-size: cover;
-  }
-}
-
-@media (min-width: map-get($breakpoints, "medium")) {
-  .bg-home {
-    background-image: image('home/background-home-desktop.jpg');
-    background-position: right;
-
-  }
-}

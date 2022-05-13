@@ -53,3 +53,14 @@
   position: absolute;
   width: 1px;
 }
+
+.bg-default {
+  height: 100vh;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}

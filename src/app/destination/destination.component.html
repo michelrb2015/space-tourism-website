@@ -1,0 +1,60 @@
+<picture>
+  <source
+    srcset="assets/images/destination/background-destination-desktop.jpg"
+    media="(min-width: 768px)"
+  />
+  <source
+    srcset="assets/images/destination/background-destination-tablet.jpg"
+    media="(min-width: 375px)"
+  />
+  <img
+    src="assets/images/destination/background-destination-mobile.jpg"
+    class="bg-destination"
+  />
+</picture>
+<div class="container destination-content">
+  <h5><strong>01</strong>{{ "Pick your destination" | uppercase }}</h5>
+  <img src="assets/images/destination/image-moon.png" alt="image-moon" />
+
+  <ul class="nav-planet">
+    <li>
+      <a [routerLink]="['/destination', 'moon']" routerLinkActive="active"
+        ><span>MOON</span></a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/destination', 'mars']" routerLinkActive="active"
+        ><span>MARS</span></a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/destination', 'europe']" routerLinkActive="active"
+        ><span>EUROPE</span></a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/destination', 'titan']" routerLinkActive="active"
+        ><span>TITAN</span></a
+      >
+    </li>
+  </ul>
+
+  <h3>MOON</h3>
+
+  <p>
+    See our planet as you’ve never seen it before. A perfect relaxing trip away
+    to help regain perspective and come back refreshed. While you’re there, take
+    in some history by visiting the Luna 2 and Apollo 11 landing sites.
+  </p>
+
+  <div class="h-separator"></div>
+
+  <div class="distance-block">
+    <span>AVG. DISTANCE</span>
+    <h6>384,400 km</h6>
+  </div>
+  <div class="travel-time-block">
+    <span>Est. travel time</span>
+    <h6>3 days</h6>
+  </div>
+</div>

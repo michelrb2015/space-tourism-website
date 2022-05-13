@@ -1,0 +1,40 @@
+<header>
+  <a class="go-logo"
+    ><img src="assets/images/shared/logo.svg" alt="logo-img"
+  /></a>
+  <button
+    class="expand-menu"
+    [ngClass]="{ expanded: isExpanded }"
+    (click)="isExpanded = !isExpanded"
+  >
+    <img src="assets/images/shared/icon-hamburger.svg" alt="hamburger-icon" />
+  </button>
+</header>
+<nav [ngClass]="{ expanded: isExpanded }">
+  <button (click)="isExpanded = !isExpanded">
+    <img src="assets/images/shared/icon-close.svg" alt="close-icon" />
+  </button>
+
+  <ul class="nav-menu">
+    <li>
+      <a [routerLink]="['/home']" routerLinkActive="active"
+        ><strong>00</strong> HOME</a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/destination']" routerLinkActive="active"
+        ><strong>01</strong> DESTINATION</a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/crew']" routerLinkActive="active"
+        ><strong>02</strong> CREW</a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/technology']" routerLinkActive="active"
+        ><strong>03</strong> TECHNOLOGY</a
+      >
+    </li>
+  </ul>
+</nav>

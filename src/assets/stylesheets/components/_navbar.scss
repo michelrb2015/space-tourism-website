@@ -29,18 +29,20 @@ nav {
 
     li {
       list-style-type: none;
-
-      &.selected {
-        border-right: 4px solid $white;
-        height: 31px;
-      }
-
-      &:hover:not(.selected) {
-        border-right: 4px solid rgba(255, 255, 255, 0.5);
-        mix-blend-mode: normal;
-      }
-
       a {
+        display: flex;
+        align-items: center;
+        height: 31px;
+        width: 100%;
+
+        &.active {
+          border-right: 4px solid $white;
+        }
+
+        &:hover:not(.active) {
+          border-right: 4px solid rgba(255, 255, 255, 0.5);
+          mix-blend-mode: normal;
+        }
         strong {
           margin-right: 11px;
         }
