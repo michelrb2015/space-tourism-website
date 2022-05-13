@@ -21,7 +21,12 @@ html {
   box-sizing: inherit;
 }
 
-h1, h2, h3, h4, h6, label {
+h1,
+h2,
+h3,
+h4,
+h6,
+label {
   color: $white;
   margin: 0;
 }
@@ -46,6 +51,14 @@ h5 {
   letter-spacing: 2.7px;
   color: $primary-color;
   margin: 0;
+
+  strong {
+    font-weight: 700;
+    color: $white;
+
+    mix-blend-mode: normal;
+    opacity: 0.25;
+  }
 }
 
 h6 {
@@ -63,12 +76,9 @@ span {
 a {
   @include font(16px, 19px, $secondary-text-font);
   letter-spacing: 2.7px;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
-
-  @include on-event {
-    text-decoration: none;
-  }
+  text-decoration: none;
 }
 
 p {
