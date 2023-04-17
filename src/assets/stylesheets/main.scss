@@ -25,11 +25,13 @@
 // 5. Components
 @import
   'components/button',
-  'components/navbar';
+  'components/navbar',
+  'components/background-page';
 
 // 6. Page-specific styles
 @import
   'pages/home',
+  'pages/crew',
   'pages/destination';
 
 // 7. Themes

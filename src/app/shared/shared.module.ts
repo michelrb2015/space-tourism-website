@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
-import { AppRoutingModule } from '../app-routing.module';
-
-
+import { BackgroundPageComponent } from './background-page/background-page.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    BackgroundPageComponent
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
   ],
   exports: [
-    HeaderComponent
+    BackgroundPageComponent
   ]
 })
 export class SharedModule { }

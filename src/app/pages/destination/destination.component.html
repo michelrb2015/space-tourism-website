@@ -1,0 +1,48 @@
+<app-background-page
+  [desktop]="'assets/images/destination/background-destination-desktop.jpg'"
+  [tablet]="'assets/images/destination/background-destination-tablet.jpg'"
+  [mobile]="'assets/images/destination/background-destination-mobile.jpg'"
+></app-background-page>
+
+<div class="container destination-content">
+  <h5><strong>01</strong>{{ "Pick your destination" | uppercase }}</h5>
+  <img [src]="(destination$ | async)?.images?.png" alt="image-moon" />
+
+  <ul class="nav-planet">
+    <li>
+      <a [routerLink]="['/destination', 'moon']" routerLinkActive="active"
+        ><span>MOON</span></a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/destination', 'mars']" routerLinkActive="active"
+        ><span>MARS</span></a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/destination', 'europa']" routerLinkActive="active"
+        ><span>EUROPE</span></a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/destination', 'titan']" routerLinkActive="active"
+        ><span>TITAN</span></a
+      >
+    </li>
+  </ul>
+
+  <h3>{{ (destination$ | async)?.name | uppercase}}</h3>
+
+  <p>{{ (destination$ | async)?.description}}</p>
+
+  <div class="h-separator"></div>
+
+  <div class="distance-block">
+    <span>AVG. DISTANCE</span>
+    <h6>{{ (destination$ | async)?.distance | uppercase}}</h6>
+  </div>
+  <div class="travel-time-block">
+    <span>Est. travel time</span>
+    <h6>{{ (destination$ | async)?.travel| uppercase}}</h6>
+  </div>
+</div>

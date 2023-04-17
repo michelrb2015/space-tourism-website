@@ -1,0 +1,23 @@
+<app-background-page
+  [desktop]="'assets/images/crew/background-crew-desktop.jpg'"
+  [tablet]="'assets/images/crew/background-crew-tablet.jpg'"
+  [mobile]="'assets/images/crew/background-crew-mobile.jpg'"
+></app-background-page>
+
+<div class="container crew-content">
+  <h5><strong>02</strong>{{ "Meet your crew" | uppercase }}</h5>
+  <img [src]="currentPerson?.images?.png" />
+  <div class="h-separator"></div>
+  <div class="image-stepper">
+    <input
+      *ngFor="let person of crew; let i = index"
+      type="radio"
+      name="a"
+      (click)="setCurrentPerson(person)"
+      [checked]="i == 0"
+    />
+  </div>
+  <h6>{{ currentPerson.role }}</h6>
+  <h4>{{ currentPerson.name | uppercase }}</h4>
+  <p>{{ currentPerson.bio }}</p>
+</div>
