@@ -10,17 +10,26 @@ import { DestinationService } from 'src/app/common/services/destination.service'
   styleUrls: ['./destination.component.scss'],
 })
 export class DestinationComponent implements OnInit {
-  destination$!: Observable<Destination>;
-  constructor(
-    private destinationService: DestinationService,
-    private route: ActivatedRoute
-  ) {}
+  destinations: Destination[] = [];
+
+  currentDestination: Destination = {
+    name: '',
+    images: { png: '', webp: '' },
+    description: '',
+    distance: '',
+    travel: ''
+  };
+
+  constructor(private destinationService: DestinationService) {}
 
   ngOnInit(): void {
-    this.route.paramMap
-      .pipe(map((params: ParamMap) => params.get('name')))
-      .subscribe((name) => {
-        this.destination$ = this.destinationService.getCrewByName(name as string);
-      });
+    this.destinationService.getDestinations().subscribe((destinations) => {
+      this.destinations = [...destinations];
+      this.currentDestination = { ...destinations[0] };
+    });
+  }
+
+  setCurrentDestination(destination: Destination) {
+    this.currentDestination = { ...destination };
   }
 }

@@ -6,43 +6,28 @@
 
 <div class="container destination-content">
   <h5><strong>01</strong>{{ "Pick your destination" | uppercase }}</h5>
-  <img [src]="(destination$ | async)?.images?.png" alt="image-moon" />
+  <img [src]="currentDestination.images.png" alt="image-moon" />
 
   <ul class="nav-planet">
-    <li>
-      <a [routerLink]="['/destination', 'moon']" routerLinkActive="active"
-        ><span>MOON</span></a
-      >
-    </li>
-    <li>
-      <a [routerLink]="['/destination', 'mars']" routerLinkActive="active"
-        ><span>MARS</span></a
-      >
-    </li>
-    <li>
-      <a [routerLink]="['/destination', 'europa']" routerLinkActive="active"
-        ><span>EUROPE</span></a
-      >
-    </li>
-    <li>
-      <a [routerLink]="['/destination', 'titan']" routerLinkActive="active"
-        ><span>TITAN</span></a
+    <li *ngFor="let destination of destinations">
+      <a [ngClass]="{active: currentDestination.name === destination.name}"
+      (click)="setCurrentDestination(destination)"><span>{{destination.name | uppercase}}</span></a
       >
     </li>
   </ul>
 
-  <h3>{{ (destination$ | async)?.name | uppercase}}</h3>
+  <h3>{{ currentDestination.name | uppercase}}</h3>
 
-  <p>{{ (destination$ | async)?.description}}</p>
+  <p>{{ currentDestination.description}}</p>
 
   <div class="h-separator"></div>
 
   <div class="distance-block">
     <span>AVG. DISTANCE</span>
-    <h6>{{ (destination$ | async)?.distance | uppercase}}</h6>
+    <h6>{{ currentDestination.distance | uppercase}}</h6>
   </div>
   <div class="travel-time-block">
     <span>Est. travel time</span>
-    <h6>{{ (destination$ | async)?.travel| uppercase}}</h6>
+    <h6>{{ currentDestination.travel| uppercase}}</h6>
   </div>
 </div>

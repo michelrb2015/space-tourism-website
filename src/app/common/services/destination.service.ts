@@ -14,15 +14,4 @@ export class DestinationService {
       '../../../assets/data/destination.data.json'
     );
   }
-
-  getCrewByName(name: string): Observable<Destination> {
-    return this.getDestinations().pipe(
-      map((destinations) =>
-        destinations.find(
-          (destination) =>
-            destination.name.toLocaleLowerCase() == name.toLocaleLowerCase()
-        )
-      )
-    ) as Observable<Destination>;
-  }
 }
