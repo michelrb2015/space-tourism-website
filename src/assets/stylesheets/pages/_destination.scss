@@ -2,12 +2,7 @@
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
 
-.destination-content {
-  display: flex;
-  align-items: center;
-  flex-flow: column wrap;
-  padding-top: 88px;
-
+.page-content {
   h5 {
     color: $white;
 
