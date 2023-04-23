@@ -10,7 +10,7 @@ export class TechnologyService {
   constructor(private http: HttpClient) {}
 
   getTechnologies(): Observable<Technology[]> {
-    return this.http.get<Technology[]>('../data/technology.data.ts');
+    return this.http.get<Technology[]>('../../../assets/data/technology.data.json');
   }
 
   getTechnologyByName(name: string): Observable<Technology> {

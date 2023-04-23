@@ -1,33 +1,37 @@
-<app-background-page
-  [desktop]="'assets/images/destination/background-destination-desktop.jpg'"
-  [tablet]="'assets/images/destination/background-destination-tablet.jpg'"
-  [mobile]="'assets/images/destination/background-destination-mobile.jpg'"
-></app-background-page>
+<div class="destination-section">
+  <app-background-page
+    [desktop]="'assets/images/destination/background-destination-desktop.jpg'"
+    [tablet]="'assets/images/destination/background-destination-tablet.jpg'"
+    [mobile]="'assets/images/destination/background-destination-mobile.jpg'"
+  ></app-background-page>
 
-<div class="container page-content">
-  <h5><strong>01</strong>{{ "Pick your destination" | uppercase }}</h5>
-  <img [src]="currentDestination.images.png" alt="image-moon" />
+  <div class="container page-content">
+    <h5><strong>01</strong>{{ "Pick your destination" | uppercase }}</h5>
+    <img [src]="currentDestination.images.png" alt="image-moon" />
 
-  <ul class="nav-planet">
-    <li *ngFor="let destination of destinations">
-      <a [ngClass]="{active: currentDestination.name === destination.name}"
-      (click)="setCurrentDestination(destination)"><span>{{destination.name | uppercase}}</span></a
-      >
-    </li>
-  </ul>
+    <ul class="nav-planet">
+      <li *ngFor="let destination of destinations">
+        <a
+          [ngClass]="{ active: currentDestination.name === destination.name }"
+          (click)="setCurrentDestination(destination)"
+          ><span>{{ destination.name | uppercase }}</span></a
+        >
+      </li>
+    </ul>
 
-  <h3>{{ currentDestination.name | uppercase}}</h3>
+    <h3>{{ currentDestination.name | uppercase }}</h3>
 
-  <p>{{ currentDestination.description}}</p>
+    <p>{{ currentDestination.description }}</p>
 
-  <div class="h-separator"></div>
+    <div class="h-separator"></div>
 
-  <div class="distance-block">
-    <span>AVG. DISTANCE</span>
-    <h6>{{ currentDestination.distance | uppercase}}</h6>
-  </div>
-  <div class="travel-time-block">
-    <span>Est. travel time</span>
-    <h6>{{ currentDestination.travel| uppercase}}</h6>
+    <div class="distance-block">
+      <span>AVG. DISTANCE</span>
+      <h6>{{ currentDestination.distance | uppercase }}</h6>
+    </div>
+    <div class="travel-time-block">
+      <span>Est. travel time</span>
+      <h6>{{ currentDestination.travel | uppercase }}</h6>
+    </div>
   </div>
 </div>

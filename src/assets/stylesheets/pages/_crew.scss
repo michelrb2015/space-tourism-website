@@ -1,73 +1,74 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
-
-.bg-page {
-  opacity: 0.25;
-}
-.page-content {
-  img {
-    height: 223px;
-    margin: 32px 0 0;
+.crew-section {
+  .bg-page {
+    opacity: 0.25;
   }
+  .page-content {
+    img {
+      height: 223px;
+      margin: 32px 0 0;
+    }
 
-  .image-stepper {
-    display: flex;
-    input[type="radio"] {
-      -webkit-appearance: none;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      outline: none;
-      margin-right: 16px;
+    .image-stepper {
+      display: flex;
+      input[type="radio"] {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        outline: none;
+        margin-right: 16px;
+      }
+      input[type="radio"]:last-of-type {
+        margin-right: 0;
+      }
+      input[type="radio"]:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: normal;
+        opacity: 0.17;
+        background: #ffffff;
+        border-radius: 50%;
+      }
+      input[type="radio"]:checked:before {
+        opacity: 1;
+      }
     }
-    input[type="radio"]:last-of-type {
-      margin-right: 0;
+    h5 {
+      color: $white;
+
+      strong {
+        margin-right: 18px;
+      }
     }
-    input[type="radio"]:before {
-      content: "";
-      display: block;
+
+    h6 {
+      @include font(16px, 18px);
+      margin-top: 32px;
+      opacity: 0.5;
+    }
+
+    h4 {
+      @include font(24px, 28px);
+      margin-top: 8px;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 16px;
+      min-height: 204px;
+    }
+
+    .h-separator {
+      margin-bottom: 32px;
       width: 100%;
-      height: 100%;
-      mix-blend-mode: normal;
-      opacity: 0.17;
-      background: #ffffff;
-      border-radius: 50%;
+      height: 1px;
+
+      background: #383b4b;
     }
-    input[type="radio"]:checked:before {
-      opacity: 1;
-    }
-  }
-  h5 {
-    color: $white;
-
-    strong {
-      margin-right: 18px;
-    }
-  }
-
-  h6 {
-    @include font(16px, 18px);
-    margin-top: 32px;
-    opacity: 0.5;
-  }
-
-  h4 {
-    @include font(24px, 28px);
-    margin-top: 8px;
-  }
-
-  p {
-    text-align: center;
-    margin-top: 16px;
-    min-height: 204px;
-  }
-
-  .h-separator {
-    margin-bottom: 32px;
-    width: 100%;
-    height: 1px;
-
-    background: #383b4b;
   }
 }

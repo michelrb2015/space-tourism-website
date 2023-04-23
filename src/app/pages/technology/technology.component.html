@@ -1,10 +1,32 @@
-<app-background-page
-  [desktop]="'assets/images/technology/background-technology-desktop.jpg'"
-  [tablet]="'assets/images/technology/background-technology-tablet.jpg'"
-  [mobile]="'assets/images/technology/background-technology-mobile.jpg'"
-></app-background-page>
+<div class="technology-section">
+  <app-background-page
+    [desktop]="'assets/images/technology/background-technology-desktop.jpg'"
+    [tablet]="'assets/images/technology/background-technology-tablet.jpg'"
+    [mobile]="'assets/images/technology/background-technology-mobile.jpg'"
+  ></app-background-page>
 
-<div class="container page-content">
-  <h5><strong>03</strong>{{ "Space launch 101" | uppercase }}</h5>
-
+  <div class="container page-content">
+    <h5><strong>03</strong>{{ "Space launch 101" | uppercase }}</h5>
+  </div>
+  <div class="tech-image">
+    <img [src]="currentTech.images.landscape" />
+  </div>
+  <div class="container page-content no-pt">
+    <div class="toggle-buttons-group">
+      <button
+        *ngFor="let technology of technologies; let i = index"
+        class="toggle-button"
+        [ngClass]="{
+          active: currentTech.name === technology.name,
+          'ml-16': i !== 0
+        }"
+        (click)="setCurrentTechnology(technology)"
+      >
+        <span>{{ i + 1 }}</span>
+      </button>
+    </div>
+    <h6>THE TERMINOLOGY…</h6>
+    <h4>{{ currentTech.name | uppercase }}</h4>
+    <p>{{ currentTech.description }}</p>
+  </div>
 </div>

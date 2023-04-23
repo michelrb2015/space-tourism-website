@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the technology page.
+// -----------------------------------------------------------------------------
+
+.tech-image {
+  margin: 32px 0 34px 0;
+  height: 170px;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.container {
+  .toggle-buttons-group {
+    display: flex;
+    justify-content: center;
+
+    .toggle-button {
+      padding: 0;
+
+      &.ml-16 {
+        margin-left: 16px;
+      }
+    }
+  }
+}
+
+.page-content {
+  &.no-pt {
+    padding-top: 0;
+  }
+
+  h6 {
+    @include font(14px, 17px, $secondary-text-font);
+    letter-spacing: 2.36px;
+    color: #D0D6F9;
+    opacity: 1;
+    margin-top: 26px;
+  }
+
+  h4 {
+    margin-top: 9px;
+  }
+
+  p {
+    text-align: center;
+    margin-top: 16px;
+    min-height: 204px;
+  }
+}
