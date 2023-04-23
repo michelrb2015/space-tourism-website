@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  assetsUrl: 'assets/images/'
+  assetsUrl: 'assets/images/',
+  dataUrl: 'assets/data/'
 };
 
 /*
