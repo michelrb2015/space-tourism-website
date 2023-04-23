@@ -1,26 +1,18 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+.home-section {
+  .page-content {
+    h5 {
+      margin-top: 24px;
+    }
 
-.bg-home {
-  @extend .bg-default;
-}
-.home-content {
-  display: flex;
-  align-items: center;
-  flex-flow: column wrap;
-  padding-top: 88px;
+    h1 {
+      margin: 16px 0;
+    }
 
-  h5 {
-    margin-top: 24px;
-  }
-
-  h1 {
-    margin: 16px 0;
-  }
-
-  p {
-    text-align: center;
+    p {
+      text-align: center;
+    }
   }
 }
-
