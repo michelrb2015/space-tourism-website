@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { Destination } from 'src/app/common/model/destination.interface';
 import { DestinationService } from 'src/app/common/services/destination.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-destination',
@@ -19,6 +20,7 @@ export class DestinationComponent implements OnInit {
     distance: '',
     travel: ''
   };
+  baseUrl = environment.assetsUrl;
 
   constructor(private destinationService: DestinationService) {}
 

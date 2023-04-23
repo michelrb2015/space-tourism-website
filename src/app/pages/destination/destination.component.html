@@ -7,7 +7,7 @@
 
   <div class="container page-content">
     <h5><strong>01</strong>{{ "Pick your destination" | uppercase }}</h5>
-    <img [src]="currentDestination.images.png" alt="image-moon" />
+    <img [src]="baseUrl + currentDestination.images.png" alt="image-moon" />
 
     <ul class="nav-planet">
       <li *ngFor="let destination of destinations">

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Crew } from 'src/app/common/model/crew.interface';
 import { CrewService } from 'src/app/common/services/crew.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-crew',
@@ -16,6 +17,8 @@ export class CrewComponent implements OnInit {
     role: 'Commander',
     bio: '',
   };
+
+  baseUrl = environment.assetsUrl;
 
   constructor(private crewService: CrewService) {}
 

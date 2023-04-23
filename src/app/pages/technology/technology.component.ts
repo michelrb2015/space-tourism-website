@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Technology } from 'src/app/common/model/technology.interface';
 import { TechnologyService } from 'src/app/common/services/technology.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-technology',
@@ -14,6 +15,7 @@ export class TechnologyComponent{
     images: { portrait: '', landscape: '' },
     description: ''
   };
+  baseUrl = environment.assetsUrl;
 
   constructor(private technologyService: TechnologyService) {}
 
