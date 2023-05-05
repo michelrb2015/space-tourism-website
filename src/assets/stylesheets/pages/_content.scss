@@ -3,4 +3,12 @@
   align-items: center;
   flex-flow: column wrap;
   padding-top: 88px;
+
+  h5 {
+    color: $white;
+
+    strong {
+      margin-right: 18px;
+    }
+  }
 }

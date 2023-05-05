@@ -1,23 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { Technology } from '../model/technology.interface';
-import { environment } from 'src/environments/environment';
+import { BaseSpaceService } from './base-space.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TechnologyService {
-  dataUrl = environment.dataUrl;
-  constructor(private http: HttpClient) {}
-
-  getTechnologies(): Observable<Technology[]> {
-    return this.http.get<Technology[]>(this.dataUrl + 'technology.data.json');
+export class TechnologyService extends BaseSpaceService {
+  constructor(private http: HttpClient) {
+    super();
   }
 
-  getTechnologyByName(name: string): Observable<Technology> {
-    return this.getTechnologies().pipe(
-      map((techs) => techs.find((tech) => tech.name == name))
-    ) as Observable<Technology>;
+  getSpaceData(): Observable<Technology[]> {
+    return this.http.get<Technology[]>(this.dataUrl + 'technology.data.json').pipe(
+      catchError(this.handleError)
+    );
   }
+
 }

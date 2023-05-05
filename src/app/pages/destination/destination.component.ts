@@ -1,37 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map, Observable } from 'rxjs';
-import { Destination } from 'src/app/common/model/destination.interface';
+import { Component } from '@angular/core';
+import { BaseSpaceComponent } from '../base-space.component';
 import { DestinationService } from 'src/app/common/services/destination.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-destination',
   templateUrl: './destination.component.html',
   styleUrls: ['./destination.component.scss'],
 })
-export class DestinationComponent implements OnInit {
-  destinations: Destination[] = [];
+export class DestinationComponent extends BaseSpaceComponent{
 
-  currentDestination: Destination = {
-    name: '',
-    images: { png: '', webp: '' },
-    description: '',
-    distance: '',
-    travel: ''
-  };
-  baseUrl = environment.assetsUrl;
-
-  constructor(private destinationService: DestinationService) {}
+  constructor(private destinationService: DestinationService) {
+    super(destinationService);
+  }
 
   ngOnInit(): void {
-    this.destinationService.getDestinations().subscribe((destinations) => {
-      this.destinations = [...destinations];
-      this.currentDestination = { ...destinations[0] };
-    });
+    this.initializeData()
   }
 
-  setCurrentDestination(destination: Destination) {
-    this.currentDestination = { ...destination };
-  }
 }

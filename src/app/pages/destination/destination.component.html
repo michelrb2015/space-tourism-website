@@ -7,31 +7,32 @@
 
   <div class="container page-content">
     <h5><strong>01</strong>{{ "Pick your destination" | uppercase }}</h5>
-    <img [src]="baseUrl + currentDestination.images.png" alt="image-moon" />
-
+    <div class="img-container" *ngIf="currentSpace">
+      <img [src]="baseUrl + currentSpace.images.png" alt="image-moon"/>
+    </div>
     <ul class="nav-planet">
-      <li *ngFor="let destination of destinations">
+      <li *ngFor="let destination of spaceData$ | async; let i = index">
         <a
-          [ngClass]="{ active: currentDestination.name === destination.name }"
-          (click)="setCurrentDestination(destination)"
-          ><span>{{ destination.name | uppercase }}</span></a
+          [ngClass]="{ active: activeIndex === i }"
+          (click)="setCurrentSpace(destination, i)"
+          ><span>{{ destination?.name | uppercase }}</span></a
         >
       </li>
     </ul>
 
-    <h3>{{ currentDestination.name | uppercase }}</h3>
+    <h3>{{ currentSpace?.name | uppercase }}</h3>
 
-    <p>{{ currentDestination.description }}</p>
+    <p>{{ currentSpace?.description }}</p>
 
     <div class="h-separator"></div>
 
     <div class="distance-block">
       <span>AVG. DISTANCE</span>
-      <h6>{{ currentDestination.distance | uppercase }}</h6>
+      <h6>{{ currentSpace?.distance | uppercase }}</h6>
     </div>
     <div class="travel-time-block">
       <span>Est. travel time</span>
-      <h6>{{ currentDestination.travel | uppercase }}</h6>
+      <h6>{{ currentSpace?.travel | uppercase }}</h6>
     </div>
   </div>
 </div>

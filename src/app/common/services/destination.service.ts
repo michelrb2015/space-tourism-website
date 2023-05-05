@@ -1,19 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, map } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
 import { Destination } from '../model/destination.interface';
-import { environment } from 'src/environments/environment';
+import { BaseSpaceService } from './base-space.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DestinationService {
-  dataUrl = environment.dataUrl;
-  constructor(private http: HttpClient) {}
+export class DestinationService extends BaseSpaceService{
+  constructor(private http: HttpClient) {
+    super();
+  }
 
-  getDestinations(): Observable<Destination[]> {
-    return this.http.get<Destination[]>(
-      this.dataUrl + 'destination.data.json'
+  getSpaceData(): Observable<Destination[]> {
+    return this.http.get<Destination[]>(this.dataUrl + 'destination.data.json').pipe(
+      catchError(this.handleError)
     );
   }
 }

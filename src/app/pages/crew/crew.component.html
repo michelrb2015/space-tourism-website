@@ -7,19 +7,21 @@
 
   <div class="crew container page-content">
     <h5><strong>02</strong>{{ "Meet your crew" | uppercase }}</h5>
-    <img [src]="baseUrl + currentPerson.images.png" />
+    <div class="img-container" *ngIf="currentSpace">
+      <img [src]="baseUrl + currentSpace.images.png" />
+    </div>
     <div class="h-separator"></div>
     <div class="image-stepper">
       <input
-        *ngFor="let person of crew; let i = index"
+        *ngFor="let person of spaceData$ | async; let i = index"
         type="radio"
         name="a"
-        (click)="setCurrentPerson(person)"
+        (click)="setCurrentSpace(person)"
         [checked]="i == 0"
       />
     </div>
-    <h6>{{ currentPerson.role }}</h6>
-    <h4>{{ currentPerson.name | uppercase }}</h4>
-    <p>{{ currentPerson.bio }}</p>
+    <h6>{{ currentSpace?.role }}</h6>
+    <h4>{{ currentSpace?.name | uppercase }}</h4>
+    <p>{{ currentSpace?.bio }}</p>
   </div>
 </div>

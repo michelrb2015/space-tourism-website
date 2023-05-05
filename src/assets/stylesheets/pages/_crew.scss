@@ -6,9 +6,12 @@
     opacity: 0.25;
   }
   .page-content {
-    img {
+    .img-container {
       height: 223px;
       margin: 32px 0 0;
+      img {
+        height: 100%;
+      }
     }
 
     .image-stepper {

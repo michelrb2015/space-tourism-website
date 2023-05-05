@@ -3,33 +3,20 @@ import { Observable } from 'rxjs';
 import { Crew } from 'src/app/common/model/crew.interface';
 import { CrewService } from 'src/app/common/services/crew.service';
 import { environment } from 'src/environments/environment';
+import { BaseSpaceComponent } from '../base-space.component';
 
 @Component({
   selector: 'app-crew',
   templateUrl: './crew.component.html',
   styleUrls: ['./crew.component.scss'],
 })
-export class CrewComponent implements OnInit {
-  crew: Crew[] = [];
-  currentPerson: Crew = {
-    name: '',
-    images: { png: '', webp: '' },
-    role: 'Commander',
-    bio: '',
-  };
-
-  baseUrl = environment.assetsUrl;
-
-  constructor(private crewService: CrewService) {}
+export class CrewComponent extends BaseSpaceComponent implements OnInit {
+  constructor(private crewService: CrewService) {
+    super(crewService);
+  }
 
   ngOnInit(): void {
-    this.crewService.getCrews().subscribe((crew) => {
-      this.crew = [...crew];
-      this.currentPerson = { ...crew[0] };
-    });
+    this.initializeData()
   }
 
-  setCurrentPerson(person: Crew) {
-    this.currentPerson = { ...person };
-  }
 }
