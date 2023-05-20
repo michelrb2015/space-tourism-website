@@ -12,3 +12,14 @@
     }
   }
 }
+
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  .page-content {
+    padding-top: 136px;
+  }
+
+  h5 {
+    align-self: flex-start;
+  }
+}

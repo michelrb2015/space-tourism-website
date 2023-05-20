@@ -5,34 +5,34 @@
     [mobile]="'assets/images/destination/background-destination-mobile.jpg'"
   ></app-background-page>
 
-  <div class="container page-content">
+  <div class="container page-content" *ngIf="data$ | async as data">
     <h5><strong>01</strong>{{ "Pick your destination" | uppercase }}</h5>
-    <div class="img-container" *ngIf="currentSpace">
-      <img [src]="baseUrl + currentSpace.images.png" alt="image-moon"/>
+    <div class="img-container">
+      <img [src]="baseAssetsUrl + data.selected?.images.png" alt="image-moon" />
     </div>
     <ul class="nav-planet">
-      <li *ngFor="let destination of spaceData$ | async; let i = index">
+      <li *ngFor="let destination of data.list; let i = index">
         <a
           [ngClass]="{ active: activeIndex === i }"
-          (click)="setCurrentSpace(destination, i)"
-          ><span>{{ destination?.name | uppercase }}</span></a
+          (click)="setCurrentData(destination, i)"
+          ><span>{{ data.selected?.name | uppercase }}</span></a
         >
       </li>
     </ul>
 
-    <h3>{{ currentSpace?.name | uppercase }}</h3>
+    <h3>{{ data.selected?.name | uppercase }}</h3>
 
-    <p>{{ currentSpace?.description }}</p>
+    <p>{{ data.selected?.description }}</p>
 
     <div class="h-separator"></div>
 
     <div class="distance-block">
       <span>AVG. DISTANCE</span>
-      <h6>{{ currentSpace?.distance | uppercase }}</h6>
+      <h6>{{ data.selected?.distance | uppercase }}</h6>
     </div>
     <div class="travel-time-block">
       <span>Est. travel time</span>
-      <h6>{{ currentSpace?.travel | uppercase }}</h6>
+      <h6>{{ data.selected?.travel | uppercase }}</h6>
     </div>
   </div>
 </div>

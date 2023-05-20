@@ -5,23 +5,23 @@
     [mobile]="'assets/images/crew/background-crew-mobile.jpg'"
   ></app-background-page>
 
-  <div class="crew container page-content">
+  <div *ngIf="data$ | async as data" class="crew container page-content">
     <h5><strong>02</strong>{{ "Meet your crew" | uppercase }}</h5>
-    <div class="img-container" *ngIf="currentSpace">
-      <img [src]="baseUrl + currentSpace.images.png" />
+    <div class="img-container">
+      <img [src]="baseAssetsUrl + data.selected?.images.png" />
     </div>
     <div class="h-separator"></div>
     <div class="image-stepper">
       <input
-        *ngFor="let person of spaceData$ | async; let i = index"
+        *ngFor="let person of data.list; let i = index"
         type="radio"
         name="a"
-        (click)="setCurrentSpace(person)"
+        (click)="setCurrentData(person)"
         [checked]="i == 0"
       />
     </div>
-    <h6>{{ currentSpace?.role }}</h6>
-    <h4>{{ currentSpace?.name | uppercase }}</h4>
-    <p>{{ currentSpace?.bio }}</p>
+    <h6>{{ data.selected?.role }}</h6>
+    <h4>{{ data.selected?.name | uppercase }}</h4>
+    <p>{{ data.selected?.bio }}</p>
   </div>
 </div>

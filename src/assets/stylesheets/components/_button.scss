@@ -28,30 +28,46 @@ button {
     border-radius: 50%;
     span {
       @include font(16px, 18px);
-      color: #FFFFFF;
+      color: #ffffff;
       position: absolute;
       letter-spacing: 0;
     }
   }
 
   &.toggle-button::before {
-    content: '';
+    content: "";
     display: block;
     mix-blend-mode: normal;
     opacity: 0.25;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff;
     width: 40px;
     height: 40px;
     border-radius: 50%;
   }
 
-  &.toggle-button:hover::before, &.toggle-button.active::before{
+  &.toggle-button:hover::before,
+  &.toggle-button.active::before {
     opacity: 1;
   }
   &.toggle-button.active {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     span {
       color: $secondary-color;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  button {
+    &.toggle-button {
+      span {
+        @include font(24px, 27.5px);
+      }
+    }
+    &.toggle-button::before {
+      width: 60px;
+      height: 60px;
     }
   }
 }

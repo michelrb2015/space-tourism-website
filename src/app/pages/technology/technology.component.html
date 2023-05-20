@@ -8,25 +8,28 @@
   <div class="container page-content">
     <h5><strong>03</strong>{{ "Space launch 101" | uppercase }}</h5>
   </div>
-  <div *ngIf="currentSpace" class="tech-image">
-    <img [src]="baseUrl + currentSpace.images.landscape" alt="image-tech"/>
-  </div>
-  <div class="container page-content no-pt">
-    <div class="toggle-buttons-group">
-      <button
-        *ngFor="let technology of spaceData$ | async; let i = index"
-        class="toggle-button"
-        [ngClass]="{
-          active: activeIndex === i,
-          'ml-16': i !== 0
-        }"
-        (click)="setCurrentSpace(technology, i)"
-      >
-        <span>{{ i + 1 }}</span>
-      </button>
+  <div *ngIf="data$ | async as data">
+    <div class="tech-image">
+      <img [src]="baseAssetsUrl + data.selected?.images.landscape" alt="image-tech"/>
     </div>
-    <h6>THE TERMINOLOGY…</h6>
-    <h4>{{ currentSpace?.name | uppercase }}</h4>
-    <p>{{ currentSpace?.description }}</p>
+    <div class="container page-content no-pt">
+      <div class="toggle-buttons-group">
+        <button
+          *ngFor="let technology of data.list; let i = index"
+          class="toggle-button"
+          [ngClass]="{
+            active: activeIndex === i,
+            'ml-16': i !== 0
+          }"
+          (click)="setCurrentData(technology, i)"
+        >
+          <span>{{ i + 1 }}</span>
+        </button>
+      </div>
+      <h6>THE TERMINOLOGY…</h6>
+      <h4>{{ data.selected?.name | uppercase }}</h4>
+      <p>{{ data.selected?.description }}</p>
+    </div>
   </div>
+
 </div>

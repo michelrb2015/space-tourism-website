@@ -34,7 +34,7 @@
   h6 {
     @include font(14px, 17px, $secondary-text-font);
     letter-spacing: 2.36px;
-    color: #D0D6F9;
+    color: #d0d6f9;
     opacity: 1;
     margin-top: 26px;
   }
@@ -47,5 +47,32 @@
     text-align: center;
     margin-top: 16px;
     min-height: 204px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  .tech-image {
+    margin: 60px 0 56px 0;
+    height: 310px;
+  }
+
+  .page-content {
+    h6 {
+      @include font(16px, 19.2px, $secondary-text-font);
+      letter-spacing: 2.7px;
+      margin-top: 44px;
+    }
+
+    h4 {
+      margin-top: 16px;
+      @include font(40px, 46px)
+    }
+
+    p {
+      @include font(16px, 28px, $common-text-font);
+      padding-left: 116.5px;
+      padding-right: 116.5px;
+    }
   }
 }
