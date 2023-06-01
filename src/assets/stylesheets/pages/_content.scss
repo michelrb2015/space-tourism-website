@@ -19,7 +19,7 @@
     padding-top: 136px;
   }
 
-  h5 {
+  h5:not(.home-section h5) {
     align-self: flex-start;
   }
 }

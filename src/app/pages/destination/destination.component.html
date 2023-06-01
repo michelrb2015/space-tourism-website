@@ -15,7 +15,7 @@
         <a
           [ngClass]="{ active: activeIndex === i }"
           (click)="setCurrentData(destination, i)"
-          ><span>{{ data.selected?.name | uppercase }}</span></a
+          ><span>{{ destination.name | uppercase }}</span></a
         >
       </li>
     </ul>
@@ -26,13 +26,15 @@
 
     <div class="h-separator"></div>
 
-    <div class="distance-block">
-      <span>AVG. DISTANCE</span>
-      <h6>{{ data.selected?.distance | uppercase }}</h6>
-    </div>
-    <div class="travel-time-block">
-      <span>Est. travel time</span>
-      <h6>{{ data.selected?.travel | uppercase }}</h6>
+    <div class="data-block">
+      <div class="distance-block">
+        <span>AVG. DISTANCE</span>
+        <h6>{{ data.selected?.distance | uppercase }}</h6>
+      </div>
+      <div class="travel-time-block">
+        <span>Est. travel time</span>
+        <h6>{{ data.selected?.travel | uppercase }}</h6>
+      </div>
     </div>
   </div>
 </div>

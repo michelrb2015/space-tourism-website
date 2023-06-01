@@ -6,6 +6,9 @@
     opacity: 0.25;
   }
   .page-content {
+    height: 100vh;
+    overflow: hidden;
+
     .img-container {
       height: 223px;
       margin: 32px 0 0;
@@ -72,6 +75,44 @@
       height: 1px;
 
       background: #383b4b;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  .crew-section {
+    .page-content {
+      .h-separator {
+        display: none;
+      }
+
+      .image-stepper {
+        order: 2;
+      }
+      .img-container {
+        order: 3;
+        margin-top: auto;
+        height: 532px;
+      }
+      h6 {
+        margin-top: 60px;
+        @include font(24px, 28px);
+      }
+      h4 {
+        @include font(40px, 46px);
+      }
+      p {
+        padding-left: initial;
+        padding-right: initial;
+        max-width: 592px;
+        height: 84px;
+        min-height: max-content;
+      }
+
+      .image-stepper {
+        margin-top: 40px;
+      }
     }
   }
 }

@@ -19,6 +19,35 @@ button {
     background-color: $white;
     margin-top: 81px;
     border-radius: 50%;
+    position: relative;
+  }
+  &.big-button::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+  }
+  &.big-button:hover::before {
+    animation: big-button-shadow 1.5s infinite;
+  }
+
+  @keyframes big-button-shadow {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.6);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   &.toggle-button {
@@ -68,6 +97,14 @@ button {
     &.toggle-button::before {
       width: 60px;
       height: 60px;
+    }
+    &.big-button {
+      @include font(32px, 37px);
+      letter-spacing: 2px;
+
+      height: 242px;
+      width: 242px;
+      margin-top: 156px;
     }
   }
 }
