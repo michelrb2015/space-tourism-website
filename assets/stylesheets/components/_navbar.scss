@@ -50,3 +50,49 @@ nav {
     }
   }
 }
+
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  nav {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    transform: none;
+    backdrop-filter: blur(40.7742px);
+
+    button {
+      display: none;
+    }
+
+    ul {
+      flex-flow: row nowrap;
+      gap: 37px;
+      margin: 0;
+      padding: 0 46px;
+
+      li {
+        a {
+          height: 96px;
+          @include font(14px, 17px, $secondary-text-font);
+          letter-spacing: 2.36px;
+          border-bottom: 4px solid transparent;
+
+          &.active {
+            border-right: none;
+            border-bottom: 4px solid hsl(0, 0%, 100%);
+          }
+
+          &:hover:not(.active) {
+            border-right: none;
+            border-bottom: 4px solid rgba(255, 255, 255, 0.5);
+            mix-blend-mode: normal;
+          }
+
+          strong {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

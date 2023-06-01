@@ -3,4 +3,23 @@
   align-items: center;
   flex-flow: column wrap;
   padding-top: 88px;
+
+  h5 {
+    color: $white;
+
+    strong {
+      margin-right: 18px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  .page-content {
+    padding-top: 136px;
+  }
+
+  h5:not(.home-section h5) {
+    align-self: flex-start;
+  }
 }

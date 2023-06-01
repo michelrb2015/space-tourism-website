@@ -1,51 +1,82 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the technology page.
 // -----------------------------------------------------------------------------
-
-.tech-image {
-  margin: 32px 0 34px 0;
-  height: 170px;
-  img {
-    height: 100%;
-    width: 100%;
+.technology-section {
+  .tech-image {
+    margin: 32px 0 34px 0;
+    height: 170px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
-}
 
-.container {
-  .toggle-buttons-group {
-    display: flex;
-    justify-content: center;
+  .container {
+    .toggle-buttons-group {
+      display: flex;
+      justify-content: center;
 
-    .toggle-button {
-      padding: 0;
+      .toggle-button {
+        padding: 0;
 
-      &.ml-16 {
-        margin-left: 16px;
+        &.ml-16 {
+          margin-left: 16px;
+        }
       }
     }
   }
+
+  .page-content {
+    &.no-pt {
+      padding-top: 0;
+    }
+
+    h6 {
+      @include font(14px, 17px, $secondary-text-font);
+      letter-spacing: 2.36px;
+      color: #d0d6f9;
+      opacity: 1;
+      margin-top: 26px;
+    }
+
+    h4 {
+      margin-top: 9px;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 16px;
+    }
+  }
+
 }
 
-.page-content {
-  &.no-pt {
-    padding-top: 0;
-  }
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  .technology-section {
 
-  h6 {
-    @include font(14px, 17px, $secondary-text-font);
-    letter-spacing: 2.36px;
-    color: #D0D6F9;
-    opacity: 1;
-    margin-top: 26px;
-  }
+    .tech-image {
+      margin: 60px 0 56px 0;
+      height: 310px;
+    }
 
-  h4 {
-    margin-top: 9px;
-  }
+    .page-content {
 
-  p {
-    text-align: center;
-    margin-top: 16px;
-    min-height: 204px;
+      h6 {
+        @include font(16px, 19.2px, $secondary-text-font);
+        letter-spacing: 2.7px;
+        margin-top: 44px;
+      }
+
+      h4 {
+        margin-top: 16px;
+        @include font(40px, 46px)
+      }
+
+      p {
+        padding-left: 116.5px;
+        padding-right: 116.5px;
+      }
+    }
   }
 }

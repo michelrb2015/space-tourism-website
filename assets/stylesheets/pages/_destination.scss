@@ -3,18 +3,13 @@
 // -----------------------------------------------------------------------------
 .destination-section {
   .page-content {
-    h5 {
-      color: $white;
-
-      strong {
-        margin-right: 18px;
-      }
-    }
-
-    img {
+    .img-container {
       height: 170px;
       width: 170px;
       margin-top: 32px;
+      img {
+        height: 100%;
+      }
     }
 
     ul {
@@ -31,9 +26,11 @@
           align-items: flex-start;
           height: 28px;
           width: 100%;
+          color: #D0D6F9;
 
           &.active {
             border-bottom: 3px solid $white;
+            color: #fff;
           }
 
           &:hover:not(.active) {
@@ -70,6 +67,60 @@
 
     .travel-time-block {
       margin: 32px 0 56px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  .destination-section {
+    .page-content {
+      .img-container {
+        height: 300px;
+        width: 300px;
+        margin-top: 57px;
+      }
+
+      ul {
+        gap: 36px;
+        margin: 56px 0 0;
+
+        li {
+          a {
+            height: 34px;
+          }
+        }
+      }
+
+      h3 {
+        margin-top: 32px;
+        @include font(80px, 92px);
+      }
+
+      p {
+        padding-left: 58.5px;
+        padding-right: 58.5px;
+        margin-top: 8px;
+        min-height: max-content;
+
+      }
+
+      .h-separator {
+        margin: 49px 0 28px;
+        max-width: 573px;
+
+      }
+
+      .data-block {
+        display: flex;
+        .distance-block,
+        .travel-time-block {
+          min-width: 216px;
+        }
+        .travel-time-block {
+          margin: 0;
+        }
+      }
     }
   }
 }

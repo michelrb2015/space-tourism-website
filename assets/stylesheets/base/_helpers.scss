@@ -64,3 +64,11 @@
   left: 0;
   z-index: -1;
 }
+
+@media only screen and (min-width: 768px) {
+  /* For tablet: */
+  .container {
+    padding-left: 38.5px;
+    padding-right: 38.5px;
+  }
+}
