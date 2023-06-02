@@ -10,11 +10,11 @@
     <img src="assets/images/shared/icon-hamburger.svg" alt="hamburger-icon" />
   </button>
 </header>
+<div class="header-line"></div>
 <nav [ngClass]="{ expanded: isExpanded }">
   <button (click)="isExpanded = !isExpanded">
     <img src="assets/images/shared/icon-close.svg" alt="close-icon" />
   </button>
-
   <ul class="nav-menu">
     <li>
       <a [routerLink]="['']" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active"

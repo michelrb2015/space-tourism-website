@@ -7,7 +7,7 @@
  */
 .clearfix::after {
   clear: both;
-  content: '';
+  content: "";
   display: table;
 }
 
@@ -70,5 +70,16 @@
   .container {
     padding-left: 38.5px;
     padding-right: 38.5px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  /* For tablet: */
+  .container {
+    max-width: max-content;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 165px;
+    padding-right: 165px;
   }
 }

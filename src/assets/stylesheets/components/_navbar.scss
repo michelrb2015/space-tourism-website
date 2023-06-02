@@ -60,6 +60,10 @@ nav {
     transform: none;
     backdrop-filter: blur(40.7742px);
 
+    .nav-line {
+      display: none;
+    }
+
     button {
       display: none;
     }
@@ -90,6 +94,30 @@ nav {
 
           strong {
             display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  nav {
+    width: 830px;
+    height: 96px;
+    top: 40px;
+
+    ul {
+      gap: 48px;
+      padding: 0 165px 0 123px;
+
+      li {
+        a {
+          @include font(16px, 19px, $secondary-text-font);
+          letter-spacing: 2.7px;
+
+          strong {
+            display: block;
           }
         }
       }
